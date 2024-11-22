@@ -1,0 +1,7 @@
+/* miniorange custom styles */
+
+/* fix color of miniorange SSO button on login page */
+body.login #mo_saml_login_sso_button {
+	background-color:#005239;
+	border-color:#005239;
+}
