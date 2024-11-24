@@ -8,13 +8,13 @@
 /**
  * Enqueue custom CSS
  */
-add_action('login_enqueue_scripts', 'gmuj_miniorange_c_enqueue_styles');
-function gmuj_miniorange_c_enqueue_styles() {
+add_action('login_enqueue_scripts', 'gmuw_miniorange_enqueue_styles_login');
+function gmuw_miniorange_enqueue_styles_login() {
 
   // Enqueue the custom stylesheets
   wp_enqueue_style(
-    'gmuj_miniorange_c_css', //stylesheet name
-    plugin_dir_url( __DIR__ ).'css/miniorange-custom.css', //path to stylesheet
+    'gmuw_miniorange_css_login', //stylesheet name
+    plugin_dir_url( __DIR__ ).'css/miniorange-custom-login.css', //path to stylesheet
     '',  //dependencies
     time(), //version
   );
