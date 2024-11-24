@@ -1,7 +1,24 @@
 /* miniorange custom styles */
 
 /* fix color of miniorange SSO button on login page */
-body.login #mo_saml_login_sso_button {
+#mo_saml_login_sso_button {
 	background-color:#005239;
 	border-color:#005239;
+	margin-bottom:unset !important;
+}
+
+/* hide regular log in form elements */
+#loginform p,
+#loginform .user-pass-wrap {
+	display:none;
+}
+
+/* hide miniorange "or" paragraph */
+#mo_saml_button div:nth-of-type(2) {
+	display:none;
+}
+
+/* make miniorange area height not bigger */
+#mo_saml_button {
+	height:unset !important;
 }
