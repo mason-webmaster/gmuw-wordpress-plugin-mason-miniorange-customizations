@@ -31,3 +31,18 @@ require('php/custom-scripts.php');
 
 // Custom styles
 require('php/custom-styles.php');
+
+// settings
+require('php/settings.php');
+
+// branding
+include('php/branding.php');
+
+// admin menu
+include('php/admin-menu.php');
+
+// admin page
+include('php/admin-page.php');
+
+// login page customizations
+include('php/login-page.php');

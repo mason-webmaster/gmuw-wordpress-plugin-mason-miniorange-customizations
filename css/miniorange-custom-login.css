@@ -4,26 +4,35 @@
 #mo_saml_login_sso_button {
 	background-color:#005239;
 	border-color:#005239;
-	margin-bottom:unset !important;
 }
 
-/* hide regular log in form elements */
-#loginform p,
-#loginform .user-pass-wrap {
-	display:none;
-}
+/* if we're set to hide the regular WordPress login form... */
+body.login.gmuw_hideloginform {
 
-/* hide miniorange "or" paragraph */
-#mo_saml_button div:nth-of-type(2) {
-	display:none;
-}
+	/* remove extra space from botton of SSO login button*/
+	#mo_saml_login_sso_button {
+		margin-bottom:unset !important;
+	}
 
-/* make miniorange area height not bigger */
-#mo_saml_button {
-	height:unset !important;
-}
+	/* hide regular log in form elements */
+	#loginform p,
+	#loginform .user-pass-wrap {
+		display:none;
+	}
 
-/* hide forgot password link */
-#login p#nav:has(a.wp-login-lost-password) {
-	display:none;
+	/* hide miniorange "or" paragraph */
+	#mo_saml_button div:nth-of-type(2) {
+		display:none;
+	}
+
+	/* make miniorange area height not bigger */
+	#mo_saml_button {
+		height:unset !important;
+	}
+
+	/* hide forgot password link */
+	#login p#nav:has(a.wp-login-lost-password) {
+		display:none;
+	}
+
 }
