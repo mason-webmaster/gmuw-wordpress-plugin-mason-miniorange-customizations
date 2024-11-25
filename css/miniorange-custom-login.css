@@ -22,3 +22,8 @@
 #mo_saml_button {
 	height:unset !important;
 }
+
+/* hide forgot password link */
+#login p#nav:has(a.wp-login-lost-password) {
+	display:none;
+}
