@@ -38,6 +38,16 @@ function gmuw_miniorange_register_settings() {
     ['id' => 'gmuw_miniorange_settings_disable_login_form', 'label' => 'Disable WP login form?']
   );
 
+  // Add field: disable back to site link on login form
+  add_settings_field(
+    'gmuw_miniorange_settings_disable_login_back_link',
+    'Disable the back to site link on the WordPress login form?',
+    'gmuw_miniorange_callback_field_yesno',
+    'gmuw_miniorange',
+    'gmuw_miniorange_section_settings_general',
+    ['id' => 'gmuw_miniorange_settings_disable_login_back_link', 'label' => 'Disable back to site link on WP login form?']
+  );
+
 } 
 
 /**
@@ -47,6 +57,7 @@ function gmuw_miniorange_options_default() {
 
   return array(
     'gmuw_miniorange_settings_disable_login_form' => '0',
+    'gmuw_miniorange_settings_disable_login_back_link' => '0',
   );
 
 }
@@ -73,6 +84,17 @@ function gmuw_miniorange_callback_validate_options($input) {
   ) {
     // Ensure entry is either a 1 or nothing
     $input['gmuw_miniorange_settings_disable_login_form'] = sanitize_text_field($input['gmuw_miniorange_settings_disable_login_form']);
+  }
+
+  // disable wordpress login form back link
+  if (
+    isset($input['gmuw_miniorange_settings_disable_login_back_link']) &&
+    (
+      $input['gmuw_miniorange_settings_disable_login_back_link']!='1' ||
+      $input['gmuw_miniorange_settings_disable_login_back_link']!='0' )
+  ) {
+    // Ensure entry is either a 1 or nothing
+    $input['gmuw_miniorange_settings_disable_login_back_link'] = sanitize_text_field($input['gmuw_miniorange_settings_disable_login_back_link']);
   }
 
   return $input;

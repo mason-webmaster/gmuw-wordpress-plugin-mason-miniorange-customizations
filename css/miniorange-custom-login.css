@@ -36,3 +36,13 @@ body.login.gmuw_hideloginform {
 	}
 
 }
+
+/* if we're set to hide the WordPress login page back link... */
+body.login.gmuw_hideloginbacklink {
+
+	/* hide the WordPress login page back link */
+	#backtoblog {
+		display:none;
+	}
+
+}
