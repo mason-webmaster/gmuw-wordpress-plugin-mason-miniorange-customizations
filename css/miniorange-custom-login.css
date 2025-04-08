@@ -1,9 +1,24 @@
 /* miniorange custom styles */
 
+
+/* fix size of  miniorange SSO button on login page */
+#mo_saml_button {
+	height:9em !important;
+}
+
+#mo_saml_login_sso_button {
+	height:4em;
+}
+
 /* fix color of miniorange SSO button on login page */
 #mo_saml_login_sso_button {
 	background-color:#005239;
 	border-color:#005239;
+}
+
+/* add hover color for miniorange SSO button on login page */
+#mo_saml_login_sso_button:hover {
+	background-color:#338261;;
 }
 
 /* if we're set to hide the regular WordPress login form... */
