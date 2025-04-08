@@ -10,7 +10,7 @@ jQuery(document).ready(function(){
 	//get current html content of button
 	button_html=jQuery('#mo_saml_login_sso_button').html();
 	//fix html content
-	button_html_updated = button_html.replace('Login with Mason','Login via Mason SSO');
+	button_html_updated = button_html.replace('Login with Mason','Log in via George Mason SSO');
 	//replace text of button
 	jQuery('#mo_saml_login_sso_button').html(button_html_updated);
 	
