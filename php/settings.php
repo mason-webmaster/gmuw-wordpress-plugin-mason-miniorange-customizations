@@ -28,14 +28,14 @@ function gmuw_miniorange_register_settings() {
     'gmuw_miniorange'
   );
 
-  // Add field: disable standard wordpress login form
+  // Add field: enable standard wordpress login form
   add_settings_field(
-    'gmuw_miniorange_settings_disable_login_form',
-    'Disable standard WordPress login form?',
+    'gmuw_miniorange_settings_enable_login_form',
+    'Enable standard WordPress login form?',
     'gmuw_miniorange_callback_field_yesno',
     'gmuw_miniorange',
     'gmuw_miniorange_section_settings_general',
-    ['id' => 'gmuw_miniorange_settings_disable_login_form', 'label' => 'Disable WP login form?']
+    ['id' => 'gmuw_miniorange_settings_enable_login_form', 'label' => 'Enable native WordPress login form?']
   );
 
   // Add field: disable back to site link on login form
@@ -56,7 +56,7 @@ function gmuw_miniorange_register_settings() {
 function gmuw_miniorange_options_default() {
 
   return array(
-    'gmuw_miniorange_settings_disable_login_form' => '0',
+    'gmuw_miniorange_settings_enable_login_form' => '0',
     'gmuw_miniorange_settings_disable_login_back_link' => '0',
   );
 
@@ -74,16 +74,16 @@ function gmuw_miniorange_callback_section_settings_general() {
  * Validate plugin options
  */
 function gmuw_miniorange_callback_validate_options($input) {
-  
-  // disable standard wordpress login form
+
+  // enable standard wordpress login form
   if (
-  	isset($input['gmuw_miniorange_settings_disable_login_form']) && 
-  	(
-  		$input['gmuw_miniorange_settings_disable_login_form']!='1' || 
-  		$input['gmuw_miniorange_settings_disable_login_form']!='0' )
+    isset($input['gmuw_miniorange_settings_enable_login_form']) &&
+    (
+      $input['gmuw_miniorange_settings_enable_login_form']!='1' ||
+      $input['gmuw_miniorange_settings_enable_login_form']!='0' )
   ) {
     // Ensure entry is either a 1 or nothing
-    $input['gmuw_miniorange_settings_disable_login_form'] = sanitize_text_field($input['gmuw_miniorange_settings_disable_login_form']);
+    $input['gmuw_miniorange_settings_enable_login_form'] = sanitize_text_field($input['gmuw_miniorange_settings_enable_login_form']);
   }
 
   // disable wordpress login form back link
@@ -98,7 +98,7 @@ function gmuw_miniorange_callback_validate_options($input) {
   }
 
   return $input;
-  
+
 }
 
 /**
