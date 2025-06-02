@@ -9,7 +9,7 @@
  * Author:            Mason Webmaster
  * Plugin URI:        https://github.com/mason-webmaster/gmuw-wordpress-plugin-mason-miniorange-customizations
  * Description:       
- * Version:           0.9
+ * Version:           1.0
  */
 
 
