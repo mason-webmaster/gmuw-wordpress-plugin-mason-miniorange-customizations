@@ -22,6 +22,13 @@ function gmuw_miniorange_display_settings_page() {
     // Output basic plugin info
     echo "<p>This plugin provides for Mason customizations to the MiniOrange SSO plugin.</p>";
 
+    // output status message if the main miniOrange plugin is not active
+    if(!in_array('miniorange-saml-20-single-sign-on/login.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+        echo '<div class="notice notice-warning is-dismissible">';
+        echo "<p>The main miniOrange SSO plugin is not active, therefore the public-facing features of this miniOrange customizations plugin are not active.</p>";
+        echo '</div>';
+    }
+
     // Begin form
     echo "<form action='options.php' method='post'>";
 

@@ -26,11 +26,6 @@
 	'gmuw-wordpress-plugin-mason-miniorange-customizations'
 	);
 
-// Custom scripts
-require('php/custom-scripts.php');
-
-// Custom styles
-require('php/custom-styles.php');
 
 // settings
 require('php/settings.php');
@@ -44,5 +39,16 @@ include('php/admin-menu.php');
 // admin page
 include('php/admin-page.php');
 
-// login page customizations
-include('php/login-page.php');
+//only activate some features of this plugin if the regular miniOrange plugin is active
+if(in_array('miniorange-saml-20-single-sign-on/login.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+
+	// Custom scripts
+	require('php/custom-scripts.php');
+
+	// Custom styles
+	require('php/custom-styles.php');
+
+	// login page customizations
+	include('php/login-page.php');
+
+}
